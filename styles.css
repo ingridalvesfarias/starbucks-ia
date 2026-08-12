@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: clamp(12px, 2vh, 20px) clamp(20px, 6vw, 100px) clamp(12px, 2vh, 24px);
+    background-image: url("img/fundo.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    position: relative;
+}
+
+.caixa-conteudo {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(16px, 3vw, 40px);
+    padding: clamp(10px, 2vh, 24px) 0;
+}
+
+.caixa-textos {
+    width: 600px;
+    max-width: 100%;
+    flex: 1 1 340px;
+}
+
+h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 60px);
+    line-height: 1.15;
+}
+
+.texto-starbucks {
+    color: #017143;
+    font-weight: 900;
+    font-size: clamp(36px, 6vw, 70px);
+}
+
+.paragrafo {
+    font-size: clamp(14px, 1.8vw, 16px);
+    color: #fff;
+    max-width: 500px;
+}
+
+button {
+    background-color: #017143;
+    color: #fff;
+    margin-top: clamp(14px, 2.5vh, 30px);
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+    font-size: clamp(13px, 1.5vw, 15px);
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #00b368;
+}
+
+.logo {
+    width: clamp(44px, 6vh, 80px);
+    flex-shrink: 0;
+}
+
+.caixa-imagem {
+    width: 600px;
+    max-width: 100%;
+    height: 100%;
+    flex: 1 1 280px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-self: flex-end;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.imagem-copo {
+    width: auto;
+    max-width: 100%;
+    height: clamp(140px, 46vmin, 320px);
+    transform: translateY(clamp(15px, 4vh, 60px));
+}
+
+.caixa-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: clamp(8px, 1.5vh, 16px);
+}
+
+.botao-menu {
+    width: clamp(42px, 6vh, 80px);
+    height: auto;
+    cursor: pointer;
+    margin: 8px;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.botao-menu:hover {
+    transform: translateY(-10px) scale(1.08);
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.25));
+}
+
+.circulo {
+    background-color: #017143;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: circle(clamp(320px, 33vmax, 560px) at 100% 100%);
+    z-index: -1;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .caixa-conteudo {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .caixa-textos {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .paragrafo {
+        margin: 0 auto;
+    }
+
+    .caixa-imagem {
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .circulo {
+        clip-path: circle(clamp(200px, 45vh, 360px) at 50% 100%);
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        padding-bottom: 24px;
+    }
+
+    .caixa-imagem {
+        order: -1;
+    }
+
+    .imagem-copo {
+        height: clamp(140px, 32vh, 240px);
+    }
+
+    .circulo {
+        clip-path: circle(clamp(180px, 55vh, 300px) at 50% 30%);
+    }
+
+    .caixa-menu {
+        gap: 10px;
+    }
+}
